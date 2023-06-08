@@ -18,7 +18,7 @@ def title():
     | |___| (_| | | (__| |_| | | (_| | || (_) | |   
      \_____\__,_|_|\___|\__,_|_|\__,_|\__\___/|_|   '''
     print(purple + text + reset)
-    print("            Version 1.2   by LouisVDE")
+    print("            Version 1.3   by LouisVDE")
 
 def ft_ope(nbr_1, nbr_2):
     nbr_3 = 0
@@ -60,6 +60,7 @@ def input_1():
             clear_screen()
             calc()
         elif nbr_1 == "exit":
+            clear_screen()
             return None
         elif nbr_1 is None or not is_float(nbr_1):
             print("Error, invalid first number")
@@ -73,6 +74,7 @@ def input_2():
             clear_screen()
             calc()
         elif nbr_2 == "exit":
+            clear_screen()
             return None
         elif nbr_2 is None or not is_float(nbr_2):
             print("Error, invalid second number")
