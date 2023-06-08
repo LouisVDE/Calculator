@@ -3,9 +3,9 @@ import time
 
 def ft_ope(nbr_1, nbr_2):
     nbr_3 = 0
-    ope = input("Entre un opérateur: ")
+    ope = input("Enter an operator: ")
     if ope not in ["+", "-", "*", "/", "AC", "ac"]:
-        print("Erreur, opérateur invalide")
+        print("Error, invalid operator")
         exit()
     if ope == "+":
         nbr_3 = float(nbr_1) + float(nbr_2)
@@ -27,26 +27,26 @@ def ft_ope(nbr_1, nbr_2):
     return nbr_3
 
 def input_1():
-    nbr_1 = input("Entre un premier nombre: ")
+    nbr_1 = input("Enter the first number: ")
     if nbr_1 == "AC" or nbr_1 == "ac":
         os.system('clear')
         calc()
     elif nbr_1 == "exit":
         exit()
     elif not is_float(nbr_1):
-        print("Erreur, premier nombre invalide")
+        print("Error, invalid first number")
         exit()
     return nbr_1
      
 def input_2():
-    nbr_2 = input("Entre un deuxième nombre: ")
+    nbr_2 = input("Enter the second number: ")
     if nbr_2 == "AC" or nbr_2 == "ac":
         os.system('clear')
         calc()
     elif nbr_2 == "exit":
         exit()
     elif not is_float(nbr_2):
-        print("Erreur, deuxième nombre invalide")
+        print("Error, invalid second number")
         exit()
     return nbr_2
 
@@ -67,7 +67,7 @@ def calc():
     if nbr_1 == "exit":
         exit()
     if not is_float(nbr_1):
-        print("Erreur, premier nombre invalide")
+        print("Error, invalid first number")
         exit()
 
     while True:
@@ -76,13 +76,13 @@ def calc():
             os.system('clear')
             calc()
         if not is_float(nbr_2):
-            print("Erreur, deuxième nombre invalide")
+            print("Error, invalid second number")
             exit()
         nbr_1 = ft_ope(nbr_1, nbr_2)
 
 def main():
     os.system('clear')
-    print("Bienvenue sur la calculatrice")
+    print("Welcome to the calculator")
     time.sleep(2)
     os.system('clear')
     calc()
