@@ -1,5 +1,12 @@
 import os
 import time
+import platform
+
+def clear_screen():
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def title():
     purple = '\033[95m'
@@ -11,7 +18,7 @@ def title():
     | |___| (_| | | (__| |_| | | (_| | || (_) | |   
      \_____\__,_|_|\___|\__,_|_|\__,_|\__\___/|_|   '''
     print(purple + text + reset)
-    print("            Version 1.1   by LouisVDE")
+    print("            Version 1.2   by LouisVDE")
 
 def ft_ope(nbr_1, nbr_2):
     nbr_3 = 0
@@ -34,13 +41,13 @@ def ft_ope(nbr_1, nbr_2):
         if float(nbr_2) == 0:
             print("Error, division by zero")
             time.sleep(2)
-            os.system('cls')
+            clear_screen()
             calc()
             return
         nbr_3 = float(nbr_1) / float(nbr_2)
         print(nbr_3)
     elif ope == "AC" or ope == "ac":
-        os.system('cls')
+        clear_screen()
         calc()
     elif ope == "C":
         ft_ope(nbr_1, nbr_2)
@@ -50,7 +57,7 @@ def input_1():
     while True:
         nbr_1 = input("Enter the first number: ")
         if nbr_1 == "AC" or nbr_1 == "ac":
-            os.system('cls')
+            clear_screen()
             calc()
         elif nbr_1 == "exit":
             return None
@@ -63,7 +70,7 @@ def input_2():
     while True:
         nbr_2 = input("Enter the second number: ")
         if nbr_2 == "AC" or nbr_2 == "ac":
-            os.system('cls')
+            clear_screen()
             calc()
         elif nbr_2 == "exit":
             return None
@@ -86,7 +93,7 @@ def calc():
     if nbr_1 is None:
         return
     if nbr_1 == "AC" or nbr_1 == "ac":
-        os.system('cls')
+        clear_screen()
         calc()
     if nbr_1 is None or not is_float(nbr_1):
         print("Error, invalid first number")
@@ -95,7 +102,7 @@ def calc():
     while True:
         nbr_2 = input_2()
         if nbr_2 == "AC" or nbr_2 == "ac":
-            os.system('cls')
+            clear_screen()
             calc()
         if nbr_2 is None:
             return
@@ -107,10 +114,10 @@ def calc():
             return
 
 def main():
-    os.system('cls')
+    clear_screen()
     title()
     time.sleep(2)
-    os.system('cls')
+    clear_screen()
     calc()
 
 if __name__ == "__main__":
